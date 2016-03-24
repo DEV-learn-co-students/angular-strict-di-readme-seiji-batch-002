@@ -37,11 +37,11 @@ angular
 	.controller('SomeController', SomeController);
 ```
 
-This is where the overhead comes in!
+This is where the overhead comes in! Angular has to parse the string version of our function, filter out all the unnecessary parts and compile an array of the needed dependencies.
 
 ## strictDI
 
-strictDI means that Angular will no longer create that `$inject` property for us - we must specify it ourselves.
+strictDI means that Angular will no longer create that `$inject` property for us - we must specify it ourselves, removing any unnecessary overhead.
 
 We can turn on strictDI by putting the directive `ng-strict-di` on the same element we put `ng-app` on.
 
@@ -50,4 +50,4 @@ We can turn on strictDI by putting the directive `ng-strict-di` on the same elem
 </div>
 ```
 
-Now, any custom filter/service/directive/controller/etc that does not have the `$inject` property defined will throw an error.
+Now, any custom filter/service/directive/controller/etc that does not have the `$inject` property defined will throw an error. If we've annotated all of our functions correctly (saving Angular a load of time), it'll work exactly like before - just that little bit faster!
