@@ -23,7 +23,7 @@ angular
 	.controller('SomeController', SomeController);
 ```
 
-When we plug this controller into Angular, Angular checks what dependencies we wants and creates a `$inject` array on our controller:
+When we plug this controller into Angular, Angular checks what dependencies it wants and creates an `$inject` array on our controller:
 
 ```js
 function SomeController($scope, $timeout, UserService) {
@@ -51,3 +51,4 @@ We can turn on strictDI by putting the directive `ng-strict-di` on the same elem
 ```
 
 Now, any custom filter/service/directive/controller/etc that does not have the `$inject` property defined will throw an error. If we've annotated all of our functions correctly (saving Angular a load of time), it'll work exactly like before - just that little bit faster!
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/angular-strict-di-readme'>Angular StrictDi Mode</a> on Learn.co and start learning to code for free.</p>
